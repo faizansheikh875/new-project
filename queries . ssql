@@ -1,0 +1,16 @@
+SELECT * FROM customers;
+select count(*) from customers;
+SELECT * FROM transactions where market_code='Mark001';
+SELECT distinct product_code FROM transactions where market_code='Mark001';
+SELECT * from transactions where currency="USD";
+SELECT transactions.*, date.* FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020;
+SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR\r" or transactions.currency="USD\r";
+SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
+and transactions.market_code="Mark001";
+select * from transactions;
+select distinct currency from  transactions ;
+select * from transactions where currency='INR\r';
+select count(*) from transactions where currency = 'INR\r';
+select count(*) from transactions where currency = 'USD';
+select count(*) from transactions where currency = 'USD\r';
+select * from transactions where currency ='USD\r' or currency = 'USD'
